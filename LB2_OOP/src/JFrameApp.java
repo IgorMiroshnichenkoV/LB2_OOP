@@ -259,15 +259,26 @@ public class JFrameApp extends JFrame {
 
         btnEnterSize.addActionListener(actionEvent -> {
             door.size(door.height, door.width);
-            label13.setVisible(true);
-            door.height = Integer.parseInt(txt5.getText());
-            label13.setText("Висоту змінено на: " + door.height);
-            System.out.println("height Size: " + door.height);
 
-            label14.setVisible(true);
-            door.width = Integer.parseInt(txt6.getText());
-            label14.setText("Ширину змінено на: " + door.width);
-            System.out.println("width Sise: " + door.width);
+            if(Integer.parseInt(txt5.getText()) > door.height) {
+                label13.setVisible(true);
+                label13.setText("Введіть висоту меншу " + door.height + "!");
+            }else {
+                label13.setVisible(true);
+                door.height = Integer.parseInt(txt5.getText());
+                label13.setText("Висоту змінено на: " + door.height);
+                System.out.println("height Size: " + door.height);
+            }
+
+            if(Integer.parseInt(txt6.getText()) > door.width) {
+                label14.setVisible(true);
+                label14.setText("Введіть ширину меншу " + door.width + "!");
+            }else {
+                label14.setVisible(true);
+                door.width = Integer.parseInt(txt6.getText());
+                label14.setText("Ширину змінено на: " + door.width);
+                System.out.println("width Size: " + door.width);
+            }
         });
 
         btnEnterColor.addActionListener(actionEvent -> {
