@@ -260,7 +260,7 @@ public class JFrameApp extends JFrame {
         btnEnterSize.addActionListener(actionEvent -> {
             door.size(door.height, door.width);
 
-            if(Integer.parseInt(txt5.getText()) > door.height) {
+            if(Integer.parseInt(txt5.getText()) >= door.height) {
                 label13.setVisible(true);
                 label13.setText("Введіть висоту меншу " + door.height + "!");
             }else {
@@ -270,7 +270,7 @@ public class JFrameApp extends JFrame {
                 System.out.println("height Size: " + door.height);
             }
 
-            if(Integer.parseInt(txt6.getText()) > door.width) {
+            if(Integer.parseInt(txt6.getText()) >= door.width) {
                 label14.setVisible(true);
                 label14.setText("Введіть ширину меншу " + door.width + "!");
             }else {
